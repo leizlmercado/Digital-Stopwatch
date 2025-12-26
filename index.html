@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Stopwatch</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="stopwatch-container">
+    <div class="stopwatch">
+      <div class="stopwatch-header">
+        <h1>Stopwatch</h1>
+        <div class="theme-toggle" id="themeToggle">
+          <span class="theme-icon">🌙</span>
+        </div>
+      </div>
+      
+      <div class="display-container">
+        <div class="time-display" id="timeDisplay">
+          <span class="time-unit" id="hours">00</span>
+          <span class="separator">:</span>
+          <span class="time-unit" id="minutes">00</span>
+          <span class="separator">:</span>
+          <span class="time-unit" id="seconds">00</span>
+          <span class="separator separator-small">.</span>
+          <span class="time-unit time-unit-small" id="milliseconds">00</span>
+        </div>
+      </div>
+      
+      <div class="controls">
+        <button class="btn btn-primary" id="startStopBtn" onclick="toggleStartStop()">
+          <span id="startStopText">Start</span>
+        </button>
+        <button class="btn btn-secondary" id="resetBtn" onclick="reset()" disabled>
+          Reset
+        </button>
+        <button class="btn btn-tertiary" id="lapBtn" onclick="recordLap()" disabled>
+          Lap
+        </button>
+      </div>
+      
+      <div class="laps-container" id="lapsContainer">
+        <div class="laps-header">
+          <h2>Laps</h2>
+          <button class="btn-clear-laps" id="clearLapsBtn" onclick="clearLaps()" style="display: none;">Clear</button>
+        </div>
+        <div class="laps-list" id="lapsList"></div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
+
